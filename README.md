@@ -1,4 +1,4 @@
-This project consists of a few small java classes that will export a twitter neighborhood for a set of twitter users to a set of files that can be easily loaded into DSE Graph using the DSE Graph Loader.
+This project consists of a few small java classes that will export a twitter neighborhood to a set of files that can be easily loaded into DSE Graph using the DSE Graph Loader.
 
 * Set up your Twitter API account: https://apps.twitter.com/
 * A template config file is provided: `config.properties.template`. Copy that to `config.properties`, fill in your creds, and enter a twitter account screen_name to export.
