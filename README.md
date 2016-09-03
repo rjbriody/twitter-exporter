@@ -25,6 +25,7 @@ Exporting a Twitter network and loading it into DSE Graph
    Note: The Twitter APIs are rate limited so this can take a while (one minute per user, to be exactly). However, the good news is that you can simply restart again if the app fails, you lose wifi, or you need to cancel for whatever reason.
    
 * Make sure DSE Graph is running.
+* **Edit the JSON file paths in user.groovy and follows.groovy based on your env.**
 * Load the user vertices using the DSE Graph Loader. Here is an example command. Obviously you will need to tweak the paths, IP, and graph name to your environment.
 
    `cd ~/datastax/dse-graph-loader-5.0.0/; ./graphloader ~/workspace/twitter-exporter/dseGrapLoaderScripts/user.groovy -graph TWITTERVERSE -address localhost`
