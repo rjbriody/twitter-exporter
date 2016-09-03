@@ -11,6 +11,7 @@ Prerequisites
 You're going to need to get DSE running with Graph enabled. You will also need to download the DSE Graph Loader. Please check out the wonderful DataStax instructions & documentation to get started:
 
    https://docs.datastax.com/en/latest-dse/datastax_enterprise/graph/graphTOC.html
+   
    https://docs.datastax.com/en/latest-dse/datastax_enterprise/graph/dgl/dglOverview.html
    
 Exporting a Twitter network and loading it into DSE Graph
