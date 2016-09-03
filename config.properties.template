@@ -1,0 +1,5 @@
+screen_names=<comma separated list of twitter screen names>
+consumerKey = <your consumer key> 
+consumerSecret = <your consumer secret> 
+accessToken = <your access token> 
+accessSecret = <your access secret> 
