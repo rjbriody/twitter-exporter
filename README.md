@@ -18,21 +18,22 @@ Exporting a Twitter network and loading it into DSE Graph
 ----
 
 * Set up your Twitter API account: https://apps.twitter.com/
-* A template config file is provided: `config.properties.template`. Copy that to `config.properties`, fill in your creds, and enter a twitter account screen_name to export.
-* Run PopulateQueue.java
-* Run PopulateUser.java
-* Run PopulateFollowers.java
+* Clone (or fork and clone) this project.
+* A template config file is provided: `config.properties.template`. Copy that to `config.properties`, fill in your Twitter API creds, and enter a twitter account screen_name to export.
 
-   Note: The Twitter APIs are rate limited so this can take a while (one minute per user, to be exactly). However, the good news is that you can simply restart again if the app fails, you lose wifi, or you need to cancel for whatever reason.
-   
+   Note: The Twitter APIs are rate limited so exporting the network can take a while (approximately 1 minute per user). Consider this when choosing what account to export. However, if you lose WIFI or the app stops then you can simply restart at any step to pick up where you left off.
+
+* Run PopulateQueue.java. (I run from Intellij. Any method for executing the classes should work just fine.)
+* Run PopulateUser.java
+* Run PopulateFollowers.java. This step may take a while (approximately 1 minute per user).
 * Make sure DSE Graph is running.
 * **Edit the JSON file paths in user.groovy and follows.groovy based on your env.**
 * Load the user vertices using the DSE Graph Loader. Here is an example command. Obviously you will need to tweak the paths, IP, and graph name to your environment.
 
-   `cd ~/datastax/dse-graph-loader-5.0.0/; ./graphloader ~/workspace/twitter-exporter/dseGrapLoaderScripts/user.groovy -graph TWITTERVERSE -address localhost`
+   `cd ~/datastax/dse-graph-loader-5.0.1/; ./graphloader ~/datastax/twitter-exporter/dseGrapLoaderScripts/user.groovy -graph BOBS_TWITTERVERSE -address localhost`
    
 * Load the follows edges.
 
-   `cd ~/datastax/dse-graph-loader-5.0.0/; ./graphloader ~/workspace/twitter-exporter/dseGrapLoaderScripts/follows.groovy -graph TWITTERVERSE -address localhost`
+   `cd ~/datastax/dse-graph-loader-5.0.1/; ./graphloader ~/datastax/twitter-exporter/dseGrapLoaderScripts/follows.groovy -graph BOBS_TWITTERVERSE -address localhost`
    
 * Party!!!
